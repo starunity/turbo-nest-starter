@@ -1,0 +1,18 @@
+{
+  "name": "competition-platform",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "latest",
+      "helm": "latest",
+      "minikube": "latest"
+    }
+  },
+  "service": "dev",
+  "dockerComposeFile": ["./docker-compose.yml"],
+  "workspaceFolder": "/home/node",
+  "shutdownAction": "stopCompose"
+}
