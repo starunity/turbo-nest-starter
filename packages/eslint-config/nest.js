@@ -4,22 +4,13 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  plugins: ['@typescript-eslint/eslint-plugin', 'only-warn'],
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'eslint-config-turbo',
-  ],
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: ['plugin:@typescript-eslint/recommended', require.resolve('./base')],
   env: {
     node: true,
     jest: true,
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    '.*.js',
-    'node_modules/',
-    'dist/',
-  ],
+
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
